@@ -12,11 +12,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import javax.sql.DataSource;
 
-// говорит о том что файл является java конфигурацией
 @Configuration
-//эта аннотация разрешает нашему проекту использовать MVC;
 @EnableWebMvc
-//где искать компоненты проекта.
 @ComponentScan("ru.itis")
 public class SpringConfig {
 

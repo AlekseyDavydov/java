@@ -7,21 +7,6 @@ import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserDto {
-    public Integer getAge() {
-        return age;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public List<AutoDto> getAutoDto() {
-        return autoDto;
-    }
 
     private Integer id;
     private String name;
@@ -68,6 +53,22 @@ public class UserDto {
         public UserDto build() {
             return new UserDto(this);
         }
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<AutoDto> getAutoDto() {
+        return autoDto;
     }
 
 }

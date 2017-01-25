@@ -23,7 +23,6 @@ public class UsersController {
         return modelAndView;
     }
 
-
     @GetMapping(value = "/users")
     @ResponseBody
     ModelAndView getUsers() {

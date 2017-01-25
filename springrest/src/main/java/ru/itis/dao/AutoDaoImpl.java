@@ -76,9 +76,7 @@ public class AutoDaoImpl implements AutoDao {
         paramsMap.put("color", auto.getColor());
         paramsMap.put("userId", auto.getUser().getId());
         paramsMap.put("autoId", auto.getId());
-        int rows = template.update(SQL_UPDATE_AUTO, paramsMap);
-        if (rows == 1)
-            return true;
+        if (template.update(SQL_UPDATE_AUTO, paramsMap) == 1) return true;
         return false;
     }
 

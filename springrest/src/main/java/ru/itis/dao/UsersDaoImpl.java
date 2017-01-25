@@ -72,8 +72,7 @@ public class UsersDaoImpl implements UsersDao {
     public boolean delete(int id) {
         Map<String, Object> paramsMap = new HashMap<String, Object>();
         paramsMap.put("userId", id);
-        int rows = template.update(SQL_DELETE_USER, paramsMap);
-        if (rows == 1) return true;
+        if (template.update(SQL_DELETE_USER, paramsMap) == 1) return true;
         return false;
     }
 
@@ -83,8 +82,7 @@ public class UsersDaoImpl implements UsersDao {
         paramsMap.put("name", user.getName());
         paramsMap.put("age", user.getAge());
         paramsMap.put("userId", user.getId());
-        int rows = template.update(SQL_UPDATE_USER, paramsMap);
-        if (rows == 1) return true;
+        if (template.update(SQL_UPDATE_USER, paramsMap) == 1) return true;
         return false;
     }
 

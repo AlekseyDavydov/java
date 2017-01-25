@@ -34,20 +34,14 @@ public class AutoController {
         return modelAndView;
     }
 
-
-    //users/{user-id}/auto
     @PostMapping(value = "users/{user-id}/auto")
-
     @ResponseBody
     ModelAndView addAuto(
             @ModelAttribute("auto") Auto auto,
             @PathVariable("user-id") int userId) {
         ModelAndView modelAndView = new ModelAndView();
-        System.out.println("Добавление авто");
-        //  Auto auto1 =
         User user = usersService.getUser(userId);
-       // auto.setUser(user);
-       System.out.println(user);
+        System.out.println(user);
         Auto auto1 = new Auto.AutoBuilder()
                 .id(auto.getId())
                 .model(auto.getModel())
@@ -60,21 +54,17 @@ public class AutoController {
         modelAndView.addObject("autos", autoList);
         modelAndView.setViewName("auto");
         return modelAndView;
-
-
     }
 
     @PostMapping(value = "/users/{user-id}/auto/{auto-id}")
     @ResponseBody
     ModelAndView showUpdatePage(
             @PathVariable("auto-id") int autoId) {
-        System.out.println("   @PostMapping переход на редактирование");
         ModelAndView modelAndView = new ModelAndView();
         System.out.println(autoService.findAuto(autoId));
         Auto auto = autoService.findAuto(autoId);
         System.out.println(auto);
         modelAndView.addObject("auto", auto);
-        // modelAndView.addObject("auto", new Auto());
         modelAndView.setViewName("updateAuto");
         return modelAndView;
     }
@@ -85,7 +75,6 @@ public class AutoController {
             @PathVariable("auto-id") int autoId,
             @RequestParam("model") String model,
             @RequestParam("color") String color) {
-        System.out.println("Редактирование");
         Auto auto = autoService.findAuto(autoId);
         Auto auto2 = new Auto.AutoBuilder()
                 .id(autoId)
@@ -102,14 +91,10 @@ public class AutoController {
     public String deleteAuto(
             @PathVariable("user-id") int userId,
             @PathVariable("auto-id") int autoId) {
-        System.out.println("удаление автомобиля");
         System.out.println("delete User");
         autoService.deleteAuto(autoId);
         return "redirect:/users/" + userId + "/auto";
-
     }
-
-
 }
 
 
