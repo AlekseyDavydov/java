@@ -43,11 +43,6 @@
             <td> Добавить пользователя</td>
         </tr>
         <tr>
-            <td> id</td>
-            <td><form:input path="id" size="5" maxlength="5"/></td>
-        </tr>
-
-        <tr>
             <td>Имя пользователя</td>
             <td><form:input path="name"/></td>
         </tr>

@@ -27,7 +27,6 @@ public class SpringConfig {
         LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource());
         builder.addResource("ru.itis.hibernate/User.hbm.xml");
         builder.addResource("ru.itis.hibernate/Auto.hbm.xml");
-
         builder.setProperty("hibernate.dialect","org.hibernate.dialect.PostgreSQL82Dialect");
         return builder.buildSessionFactory();
     }

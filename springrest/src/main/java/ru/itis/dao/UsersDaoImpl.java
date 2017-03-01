@@ -18,7 +18,7 @@ public class UsersDaoImpl implements UsersDao {
 
     // language=SQL
     private static final String SQL_INSERT_USERS =
-            "INSERT INTO group_users(id, name, age) VALUES (:userId, :userName, :userAge)";
+            "INSERT INTO group_users( name, age) VALUES ( :userName, :userAge)";
 
     // language=SQL
     private static final String SQL_DELETE_USER =

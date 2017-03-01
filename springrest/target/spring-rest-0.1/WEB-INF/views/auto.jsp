@@ -40,11 +40,6 @@
             <td>Добавить автомобиль</td>
         </tr>
         <tr>
-            <td> id:</td>
-            <td><form:input path="id"/></td>
-        </tr>
-
-        <tr>
             <td> Модель:</td>
             <td><form:input path="model"/></td>
         </tr>

@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-@SuppressWarnings("JpaQlInspection")
 public class AutoDaoImpl implements AutoDao {
 
     // language=SQL
@@ -28,7 +27,7 @@ public class AutoDaoImpl implements AutoDao {
 
     //language=SQL
     private String SQL_INSERT_AUTO =
-            "INSERT INTO group_auto (id,model, color, user_id) VALUES (:autoId, :model, :color, :userId)";
+            "INSERT INTO group_auto (model, color, user_id) VALUES ( :model, :color, :userId)";
 
     private NamedParameterJdbcTemplate template;
 
